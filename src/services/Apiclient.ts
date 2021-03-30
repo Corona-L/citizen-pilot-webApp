@@ -4,12 +4,10 @@ import { baseUrl } from '../config'
 export const fetchUserData = (username: string, password: string) =>
   fetch(`${baseUrl}/auth/login/user`, {
     method: 'POST',
-    credentials: 'include',
-    mode: 'cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password })
   })
-    .then(res => res.status <= 401 ? res : Promise.reject(new Error('fail')))
+    .then(res => res.status <= 400 ? res : Promise.reject(new Error('fail')))
     .then(res => res.status === 204 ? res : res.json())
     .catch(err => console.error('error', err));
 
@@ -28,8 +26,6 @@ interface registerInterface {
 export const registerEmployee = (user: registerInterface) =>
   fetch(`${baseUrl}/auth/empsignup`, {
     method: 'POST',
-    credentials: 'include',
-    mode: 'cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(user)
   })
