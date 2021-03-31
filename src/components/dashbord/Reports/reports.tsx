@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SetStateAction } from 'react';
 import './reports.css';
 import Report from './Report/Report';
 const MOCKDATA = [

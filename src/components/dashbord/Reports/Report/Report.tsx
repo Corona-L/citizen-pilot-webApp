@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './report.css';
 import { report } from '../../../../types';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import Modal from 'react-modal';
+import MapContainer from './MapContainer';
+import ClearIcon from '@material-ui/icons/Clear';
+import IconButton from '@material-ui/core/IconButton';
+import useClipboard from 'react-use-clipboard';
 
 type props = {
   report: report;
@@ -34,7 +39,9 @@ const Report: React.FC<props> = ({ report }) => {
     email,
   } = report;
 
+  const [isCopied, setCopied] = useClipboard(email);
   const classes = useStyles();
+  const [isModalOpen, setIsOpenModal] = useState(false);
 
   return (
     <div className="report-box">
@@ -53,10 +60,41 @@ const Report: React.FC<props> = ({ report }) => {
       </div>
       <div className="category-text">{category.toUpperCase()}</div>
       <div className="info-button-container">
-        <Button size="small" className={classes.button}>
+        <Button
+          size="small"
+          className={classes.button}
+          onClick={() => setIsOpenModal(true)}
+        >
           More
         </Button>
       </div>
+      <Modal isOpen={isModalOpen} className="reports-modal">
+        <div className="category-headertext">
+          <div className="catergory-text-white">
+            {category.charAt(0).toUpperCase() + category.slice(1)}
+          </div>
+          <IconButton
+            className="clear-icon"
+            onClick={() => setIsOpenModal(false)}
+          >
+            <ClearIcon />
+          </IconButton>
+        </div>
+        <div className="map-container">
+          <MapContainer latitude={latitude} longitude={longitude} />
+        </div>
+        <div className="picture-and-text">
+          <div className="text-modal">
+            <div className="first-last-name">
+              {Fname} {Lname}
+            </div>
+            <div onClick={setCopied}>{email}</div>
+          </div>
+          <div>
+            <img src={image} className="report-Image" alt="ReportImage" />
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };
