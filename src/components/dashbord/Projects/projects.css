@@ -25,6 +25,7 @@
   font-size: 1.5rem;
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
+  border-radius: 5px;
 }
 .Project-tab-header-text {
   margin-left: 20px;
