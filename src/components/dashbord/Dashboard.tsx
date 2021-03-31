@@ -41,7 +41,7 @@ export default function Dashboard() {
     dispatch(proposals);
     const reports = fetchReports();
     dispatch(reports);
-  }, [dispatch])
+  }, [])
 
   return (
     <div className="dash-container">

@@ -1,8 +1,31 @@
 import React from 'react';
 import './report.css';
-import { report } from '../../../../types';
+// import { report } from '../../../../types';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+
+
+type report = {
+  category: string;
+  createdAt: string;
+  description: string;
+  id: number;
+  image: string;
+  latitude: number;
+  longitude: number;
+  updatedAt: string;
+  urgency: boolean;
+  user: {
+    createdAt: string;
+    email: string;
+    favourites: null
+    fname: string;
+    id: number;
+    lname: string;
+    updatedAt: string;
+    voted: null
+  }
+};
 
 type props = {
   report: report;
@@ -22,36 +45,24 @@ const useStyles = makeStyles({
 });
 
 const Report: React.FC<props> = ({ report }) => {
-  const {
-    category,
-    description,
-    latitude,
-    longitude,
-    urgency,
-    image,
-    Fname,
-    Lname,
-    email,
-  } = report;
-
   const classes = useStyles();
 
   return (
     <div className="report-box">
       <div className="description-box">
         <div className="name-text">
-          {Lname} {Fname}
+          {report.user.fname} {report.user.lname}
         </div>
-        <div className="description-text">{description}</div>
+        <div className="description-text">{report.description.slice(0, 40)}...</div>
       </div>
       <div className="urgent-box">
-        {urgency ? (
+        {report.urgency ? (
           <div className="urgentCircle" />
         ) : (
           <div className="notUrgentIcon" />
         )}
       </div>
-      <div className="category-text">{category.toUpperCase()}</div>
+      <div className="category-text">{report.category.toUpperCase()}</div>
       <div className="info-button-container">
         <Button size="small" className={classes.button}>
           More
