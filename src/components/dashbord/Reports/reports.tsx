@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 import React, { SetStateAction } from 'react';
-=======
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../store/index';
->>>>>>> ad2c39d5671822a98179ad83697535de3dad3837
 import './reports.css';
 import Report from './Report/Report';
 
@@ -20,14 +17,10 @@ const ReportTab = () => {
       </div>
       <div>
         {allReports ? (
-          allReports.map((report: any) => (
-            <Report report={report} />
-          ))
+          allReports.map((report: any) => <Report report={report} />)
         ) : (
           <div />
         )}
-
-
       </div>
     </div>
   );
