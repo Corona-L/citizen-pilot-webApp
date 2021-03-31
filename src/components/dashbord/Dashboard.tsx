@@ -1,12 +1,11 @@
 import './Dashboard.css';
-
 import ProposalCard from './Proposals/Proposals';
 import NewsComponent from './News/NewsComponent';
 import ContactsComponent from './Contacts/ContactsComponent';
 import ReportTab from './Reports/reports';
 import ProjectTab from './Projects/projects';
 import LiveProposals from './LiveProposals/liveProposals';
-
+import logo from '../../assets/logo.png';
 
 // TODO: Add logo
 // TODO: same font everywhere
@@ -17,25 +16,27 @@ import LiveProposals from './LiveProposals/liveProposals';
 // TODO: live proposals, have little image where it says city park,OR graph/status bar underneath the text
 // TODO: Add modals
 
-
 export default function Dashboard() {
   return (
     <div className="dash-container">
       <div className="banner">
+        <img src={logo} alt="logo" className="logo-pic" />
       </div>
-      <div className="content-container">
-
-        <NewsComponent />
-        <ProposalCard />
-        <ContactsComponent />
-        <ReportTab />
-
-        <div className="last-row">
-          <ProjectTab />
-          <LiveProposals />
-
+      <div className="content">
+        <div className="left-part">
+          <div className="first-row">
+            <NewsComponent />
+            <ProposalCard />
+            <ContactsComponent />
+          </div>
+          <div className="last-row">
+            <ProjectTab />
+            <LiveProposals />
+          </div>
         </div>
-
+        <div className="report-tab-container">
+          <ReportTab />
+        </div>
       </div>
     </div>
   );
