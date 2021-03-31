@@ -20,37 +20,37 @@ import AddNewsModal from './AddNewsModal';
 
 const news = [
   {
-    id: 'her',
-    category: 'weather',
-    name: 'Storm warning',
+    id: '1',
+    category: 'Transport-delays',
+    name: 'Rail Disruption',
     imageUrl:
-      'https://images.unsplash.com/photo-1530635481267-00edc014d006?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1491&q=80',
+      'https://images.unsplash.com/photo-1532105956626-9569c03602f6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
     updatedAt: '2 seconds ago',
   },
   {
-    id: '34ölkbö',
-    name: 'Upcoming road works ',
+    id: '2',
+    name: 'Air Pollution Warning',
     imageUrl:
-      'https://images.unsplash.com/photo-1502412960062-395a1c0e966e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80',
-    updatedAt: '3 hours ago',
+      'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+    updatedAt: '3 days ago',
   },
   {
-    id: '34ökbö',
-    name: 'Upcoming election!',
+    id: '4',
+    name: 'Local Council Election Date Changed',
     imageUrl:
-      'https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-    updatedAt: '2 days ago',
+      'https://images.unsplash.com/photo-1602432596754-630e919e67a7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1363&q=80',
+    updatedAt: '4 days ago',
   },
   {
-    id: '34ökbö',
-    name: 'New app: Tinder for Cows',
-    imageUrl: 'https://i.imgur.com/WDcO19j.png',
+    id: '4',
+    name: '25th Annual Art Fair News',
+    imageUrl: 'https://images.unsplash.com/photo-1530706344228-b143ddd95043?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
     updatedAt: '6 days ago',
   },
   {
-    id: '34ökbö',
-    name: 'Train service interrupted',
-    imageUrl: 'https://i.imgur.com/WDcO19j.png',
+    id: '5',
+    name: 'Upcoming road closure',
+    imageUrl: 'https://images.unsplash.com/photo-1530677003768-e25c2b121303?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
     updatedAt: '6 days ago',
   },
 ];
