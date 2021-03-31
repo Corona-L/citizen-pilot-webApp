@@ -15,27 +15,38 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
 import AddContactModal from './AddContactModal';
 
 const contacts = [
   {
     id: '1',
-    title: 'Library',
-    email: 'library@library.com',
-    phone: '014620463',
+    title: 'Administrative Services',
+    email: 'help@cityhall.com',
+    phone: '01540205777',
   },
   {
     id: '2',
-    title: 'Police',
-    email: 'police@serious.com',
+    title: 'Police and Crime',
+    email: 'police-and-crime@cityhall.com',
     phone: '0154020463',
   },
   {
     id: '3',
-    title: 'Major',
-    email: 'major@cityhall.com',
-    phone: '01540204lke',
+    title: 'Fire Department',
+    email: 'firefighters@cityhall.com',
+    phone: '0154020000',
+  },
+  {
+    id: '4',
+    title: 'Parks and Forestry Division',
+    email: 'parks@cityhall.com',
+    phone: '0154020476',
+  },
+  {
+    id: '5',
+    title: 'Building Department',
+    email: 'buildingdepartment@cityhall.com',
+    phone: '01540201234',
   },
 ];
 

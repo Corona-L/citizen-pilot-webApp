@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './report.css';
-import { report } from '../../../../types';
+// import { report } from '../../../../types';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from 'react-modal';
@@ -8,6 +8,28 @@ import MapContainer from './MapContainer';
 import ClearIcon from '@material-ui/icons/Clear';
 import IconButton from '@material-ui/core/IconButton';
 import useClipboard from 'react-use-clipboard';
+
+type report = {
+  category: string;
+  createdAt: string;
+  description: string;
+  id: number;
+  image: string;
+  latitude: number;
+  longitude: number;
+  updatedAt: string;
+  urgency: boolean;
+  user: {
+    createdAt: string;
+    email: string;
+    favourites: null;
+    fname: string;
+    id: number;
+    lname: string;
+    updatedAt: string;
+    voted: null;
+  };
+};
 
 type props = {
   report: report;
@@ -27,19 +49,7 @@ const useStyles = makeStyles({
 });
 
 const Report: React.FC<props> = ({ report }) => {
-  const {
-    category,
-    description,
-    latitude,
-    longitude,
-    urgency,
-    image,
-    Fname,
-    Lname,
-    email,
-  } = report;
-
-  const [isCopied, setCopied] = useClipboard(email);
+  const [isCopied, setCopied] = useClipboard(report.user.email);
   const classes = useStyles();
   const [isModalOpen, setIsOpenModal] = useState(false);
 
@@ -47,18 +57,20 @@ const Report: React.FC<props> = ({ report }) => {
     <div className="report-box">
       <div className="description-box">
         <div className="name-text">
-          {Lname} {Fname}
+          {report.user.fname} {report.user.lname}
         </div>
-        <div className="description-text">{description}</div>
+        <div className="description-text">
+          {report.description.slice(0, 40)}...
+        </div>
       </div>
       <div className="urgent-box">
-        {urgency ? (
+        {report.urgency ? (
           <div className="urgentCircle" />
         ) : (
           <div className="notUrgentIcon" />
         )}
       </div>
-      <div className="category-text">{category.toUpperCase()}</div>
+      <div className="category-text">{report.category.toUpperCase()}</div>
       <div className="info-button-container">
         <Button
           size="small"
@@ -71,7 +83,7 @@ const Report: React.FC<props> = ({ report }) => {
       <Modal isOpen={isModalOpen} className="reports-modal">
         <div className="category-headertext">
           <div className="catergory-text-white">
-            {category.charAt(0).toUpperCase() + category.slice(1)}
+            {report.category.charAt(0).toUpperCase() + report.category.slice(1)}
           </div>
           <IconButton
             className="clear-icon"
@@ -81,17 +93,24 @@ const Report: React.FC<props> = ({ report }) => {
           </IconButton>
         </div>
         <div className="map-container">
-          <MapContainer latitude={latitude} longitude={longitude} />
+          <MapContainer
+            latitude={report.latitude}
+            longitude={report.longitude}
+          />
         </div>
         <div className="picture-and-text">
           <div className="text-modal">
             <div className="first-last-name">
-              {Fname} {Lname}
+              {report.user.fname} {report.user.lname}
             </div>
-            <div onClick={setCopied}>{email}</div>
+            <div onClick={setCopied}>{report.user.email}</div>
           </div>
           <div>
-            <img src={image} className="report-Image" alt="ReportImage" />
+            <img
+              src={report.image}
+              className="report-Image"
+              alt="ReportImage"
+            />
           </div>
         </div>
       </Modal>
