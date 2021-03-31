@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import {
   Box,
   Button,
-  Card,
   CardHeader,
   Divider,
   IconButton,
   List,
   ListItem,
+  ListItemAvatar,
   ListItemText,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -15,53 +15,40 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
-import AddContactModal from './AddContactModal';
+import ProposalsViewDetails from './ProposalsViewDetails';
+import ProposalsEditDetails from './ProposalsEditDetails';
 
-const contacts = [
-  {
-    id: '1',
-    title: 'Library',
-    email: 'library@library.com',
-    phone: '014620463',
-  },
-  {
-    id: '2',
-    title: 'Police',
-    email: 'police@serious.com',
-    phone: '0154020463',
-  },
-  {
-    id: '3',
-    title: 'Major',
-    email: 'major@cityhall.com',
-    phone: '01540204lke',
-  },
-];
+type ProposalType = {
+  title: string,
+  description: string,
+  location: string,
+  completiong: number,
+  image: string,
+  id: number,
+}
+
+interface proposalInterface {
+  proposals: ProposalType[];
+}
 
 const useStyles = makeStyles((theme) => ({
   list: {
-    width: 300,
+    width: 380,
     height: 370,
-    overflowY: 'scroll',
+    overflowY: "scroll",
   },
   button: {
     padding: 0,
     width: 50,
   },
-  headerDiv: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    background:
-      'linear-gradient(90deg, rgba(91,164,252,1) 0%, rgba(58,66,118,1) 100%)',
-  },
-  titleDescription: {
+  header: {
+    background: 'linear-gradient(90deg, rgba(91,164,252,1) 0%, rgba(58,66,118,1) 100%)',
     color: 'white',
-  },
+  }
 }));
 
-export default function ProposalCard() {
+
+const ProposalsItems:React.FC<proposalInterface> = ({ proposals }) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -73,22 +60,33 @@ export default function ProposalCard() {
   };
 
   return (
-    <Card className={classes.list}>
-      <div className={classes.headerDiv}>
-        <CardHeader
-          subtitle={`${contacts.length} in total`}
-          title="Contacts"
-          className={classes.titleDescription}
-        />
-        <AddContactModal />
-      </div>
+    <div>
+      <CardHeader
+        className={classes.header}
+        subtitle={`${proposals.length} in total`}
+        title="Proposal Inbox"
+      />
       <Divider />
       <List className={classes.list}>
-        {contacts.map((contact, i) => (
-          <ListItem divider={i < contacts.length - 1} key={contact.id}>
+        {proposals.map((proposal: ProposalType, i: number) => (
+          <ListItem
+            divider={i < proposals.length - 1}
+            key={proposal.id}
+          >
+            <ListItemAvatar>
+              <img
+                alt={proposal.title}
+                src={proposal.image}
+                style={{
+                  height: 48,
+                  width: 48,
+                  borderRadius: 5,
+                }}
+              />
+            </ListItemAvatar>
             <ListItemText
-              primary={contact.title}
-              secondary={`Phone: ${contact.phone}`}
+              primary={proposal.title}
+              secondary={`Proposed ${proposal.location}`}
             />
             <IconButton
               onClick={handleClick}
@@ -97,7 +95,8 @@ export default function ProposalCard() {
               className={classes.button}
             >
               <MoreVertIcon />
-            </IconButton>
+            </IconButton >
+
             <Menu
               id="choices"
               anchorEl={anchorEl}
@@ -105,10 +104,17 @@ export default function ProposalCard() {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              <MenuItem onClick={handleClose}>View Details</MenuItem>
-              <MenuItem onClick={handleClose}>Edit</MenuItem>
+              <ProposalsViewDetails
+                proposal={proposal}
+                setAnchorEl={setAnchorEl}
+              />
+              <ProposalsEditDetails
+                proposal={proposal}
+                setAnchorEl={setAnchorEl}
+              />
               <MenuItem onClick={handleClose}>Delete</MenuItem>
             </Menu>
+
           </ListItem>
         ))}
       </List>
@@ -126,8 +132,10 @@ export default function ProposalCard() {
           variant="text"
         >
           View all
-        </Button>
+      </Button>
       </Box>
-    </Card>
-  );
+    </div>
+  )
 }
+
+export default ProposalsItems
