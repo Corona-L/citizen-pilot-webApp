@@ -10,7 +10,7 @@ export const fetchUserData = (username: string, password: string) =>
     },
     body: JSON.stringify({ username, password })
   })
-    .then(res => res.status <= 401 ? res : Promise.reject(new Error('fail')))
+    .then(res => res.status <= 400 ? res : Promise.reject(new Error('fail')))
     .then(res => res.status === 204 ? res : res.json())
     .catch(err => console.error('error', err));
 
