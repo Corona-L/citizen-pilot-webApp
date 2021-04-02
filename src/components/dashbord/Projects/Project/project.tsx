@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const Project: React.FC<props> = ({ project }) => {
-  const { title, description, location, completion, image } = project;
+  const { title, completion } = project;
   const classes = useStyles();
   return (
     <div className="project-box">

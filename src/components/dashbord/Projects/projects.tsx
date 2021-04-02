@@ -5,7 +5,8 @@ import Project from './Project/project';
 const MOCKDATA = [
   {
     title: 'Roadworks on the M3 Motorway',
-    description: 'Currently there a significant roadworks being completed on the M3 Motorway between exits 49 and 54 with an expected completion time of June 2021',
+    description:
+      'Currently there a significant roadworks being completed on the M3 Motorway between exits 49 and 54 with an expected completion time of June 2021',
     location: 'M3 Exits 49 to 54',
     completion: 30,
     image:
@@ -13,7 +14,8 @@ const MOCKDATA = [
   },
   {
     title: 'New playground in Southport',
-    description: 'Southport will be the destination for a brand new childrens playground for ages 4+',
+    description:
+      'Southport will be the destination for a brand new childrens playground for ages 4+',
     location: '14 Herry Street, Southport',
     completion: 40,
     image:
@@ -21,7 +23,8 @@ const MOCKDATA = [
   },
   {
     title: 'Smart City Application Rollout',
-    description: 'The city has ordered a smart city mobile application with Citizen Pilot developers with the testing rollout expected to happen in August 2021',
+    description:
+      'The city has ordered a smart city mobile application with Citizen Pilot developers with the testing rollout expected to happen in August 2021',
     location: 'Gold Coast',
     completion: 20,
     image:
@@ -29,7 +32,8 @@ const MOCKDATA = [
   },
   {
     title: 'Honouring Corona Laufer',
-    description: 'In regards to Corona Laufers recent achievements of donating multiple benches to the city, we are building the worlds largest bench on the Broadwater in Main Beach',
+    description:
+      'In regards to Corona Laufers recent achievements of donating multiple benches to the city, we are building the worlds largest bench on the Broadwater in Main Beach',
     location: '143 Surf Parade, Main Beach',
     completion: 80,
     image:
@@ -41,7 +45,6 @@ const ProjectTab = () => {
   return (
     <div className="Project-Tab">
       <div className="Project-tab-header-text-containter">
-        {/* <div className="red-color-box"></div> */}
         <p className="Project-tab-header-text">Projects</p>
       </div>
       <div>

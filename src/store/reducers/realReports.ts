@@ -1,7 +1,6 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { SAVE_REPORTS } from '../actions/ActionTypes';
 
-
 const initialState = {};
 
 const realReports = (state = initialState, action: PayloadAction<[]>) => {
@@ -13,6 +12,5 @@ const realReports = (state = initialState, action: PayloadAction<[]>) => {
       return state;
   }
 };
-
 
 export default realReports;

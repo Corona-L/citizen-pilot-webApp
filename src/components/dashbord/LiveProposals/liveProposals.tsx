@@ -1,7 +1,6 @@
 import React from 'react';
 import './liveProposals.css';
 import Proposal from './Proposal/proposal';
-// import ProgressBar from 'react-bootstrap/ProgressBar';
 
 const MOCK_DATA_PROPOSALS = [
   {
@@ -10,7 +9,6 @@ const MOCK_DATA_PROPOSALS = [
       'Currently a proposal has been made to build more benches along the broadwater in Mermaid Beach. This would include one for every 25m along the beach.',
     location: 'Mermaid Beach',
     image:
-
       'https://image.freepik.com/free-photo/park-bench-nature_19-115455.jpg',
     votes: 500,
 

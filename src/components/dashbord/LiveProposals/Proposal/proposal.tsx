@@ -31,7 +31,7 @@ const useStyles = makeStyles({
 });
 
 const Proposal: React.FC<props> = ({ proposal }) => {
-  const { title, description, location, image, votes } = proposal;
+  const { title, description, location, votes } = proposal;
   const normalise = (value: number) => (value * 100) / 1000;
   const classes = useStyles();
 
