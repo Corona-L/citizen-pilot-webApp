@@ -17,16 +17,6 @@ import {
 
 import logo from '../../assets/logo.png';
 
-
-// TODO: Add logo
-// TODO: same font everywhere
-// TODO: make all box headers same color
-// TODO: spacing on top, left and right
-// TODO: bring live projects to the left, make it as long as proposal inbox and contacts combined
-// TODO: Add more reports so that the list goes all the way to the end of the page OR add a map underneath reports with pins for all locations
-// TODO: live proposals, have little image where it says city park,OR graph/status bar underneath the text
-// TODO: Add modals
-
 export default function Dashboard() {
   const dispatch = useDispatch();
 
@@ -41,7 +31,7 @@ export default function Dashboard() {
     dispatch(proposals);
     const reports = fetchReports();
     dispatch(reports);
-  }, [])
+  }, [dispatch]);
 
   return (
     <div className="dash-container">
