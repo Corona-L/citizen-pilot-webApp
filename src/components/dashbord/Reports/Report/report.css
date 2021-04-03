@@ -1,17 +1,17 @@
 .report-box {
-  margin-left: 30px;
+  margin-left: 1vw;
   border-bottom: 1px solid #f1f1f1;
   display: flex;
   align-items: center;
 
-  width: 570px;
+  width: 28vw;
   /* font-size: 17px;
   font-weight: 400; */
 }
 
 .description-box {
   height: 70px;
-  width: 320px;
+  width: 14vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,9 +51,80 @@
 }
 
 .category-text {
-  width: 120px;
+  width: 7vw;
   margin-left: 10px;
   color: #888;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 11px;
+}
+
+.reports-modal {
+  border-style: solid;
+  border-width: 1px;
+  height: 70vh;
+  width: 40vw;
+  background-color: white;
+  margin-top: 10vh;
+  margin-left: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.report-Image {
+  height: 20vh;
+  width: 13vw;
+  border-radius: 3px;
+}
+
+.picture-and-text {
+  display: flex;
+  margin-bottom: 5vh;
+}
+
+.text-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1.5em;
+  width: 16vw;
+
+  margin-bottom: 2vh;
+}
+
+.map-container {
+  margin-top: 4vh;
+  margin-bottom: 3vh;
+  height: 30vh;
+  width: 30vw;
+}
+
+.clear-icon {
+  margin-right: 5px;
+}
+
+.first-last-name {
+  margin-bottom: 7px;
+}
+
+.category-headertext {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  width: 40vw;
+  background: linear-gradient(
+    90deg,
+    rgba(91, 164, 252, 1) 0%,
+    rgba(58, 66, 118, 1) 100%
+  );
+  color: white;
+  font-size: 1.5rem;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  height: 10vh;
+}
+
+.catergory-text-white {
+  margin-left: 20px;
 }

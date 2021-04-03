@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, SetStateAction } from 'react';
 import Modal from '@material-ui/core/Modal';
 import MenuItem from '@material-ui/core/MenuItem';
 import { render } from '@testing-library/react';
 import { makeStyles } from '@material-ui/core/styles';
 
 type ProposalType = {
-  title: string,
-  description: string,
-  location: string,
-  completiong: number,
-  image: string,
-  id: number,
-}
+  title: string;
+  description: string;
+  location: string;
+  completiong: number;
+  image: string;
+  id: number;
+};
 
 interface proposal {
   proposal: ProposalType;
-  setAnchorEl: any;
+  setAnchorEl: React.Dispatch<SetStateAction<HTMLElement | null>>;
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -35,10 +35,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 18,
     color: 'white',
     fontWeight: 500,
-  }
+  },
 }));
 
-const ProposalsEditDetails = ( { proposal, setAnchorEl }: proposal) => {
+const ProposalsEditDetails = ({ proposal, setAnchorEl }: proposal) => {
   const classes = useStyles();
   const [open, setOpen] = useState(true);
 
@@ -49,8 +49,8 @@ const ProposalsEditDetails = ( { proposal, setAnchorEl }: proposal) => {
 
   const handleViewDetails = () => {
     setAnchorEl(null);
-    setOpen(true)
-    render (
+    setOpen(true);
+    render(
       <Modal
         aria-labelledby="proposal.title"
         aria-describedby="simple-modal-description"
@@ -58,16 +58,16 @@ const ProposalsEditDetails = ( { proposal, setAnchorEl }: proposal) => {
         open={open}
         onClose={handleClose}
       >
-      <div className="proposal-title">{classes.title}</div>
+        <div className="proposal-title">{classes.title}</div>
       </Modal>
-    )
-  }
+    );
+  };
 
   return (
     <div>
       <MenuItem onClick={handleViewDetails}>Edit</MenuItem>
     </div>
-  )
-}
+  );
+};
 
-export default ProposalsEditDetails
+export default ProposalsEditDetails;

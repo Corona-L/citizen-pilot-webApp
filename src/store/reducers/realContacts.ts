@@ -1,7 +1,6 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { SAVE_CONTACTS } from '../actions/ActionTypes';
 
-
 const initialState = {};
 
 const realContacts = (state = initialState, action: PayloadAction<[]>) => {
@@ -13,6 +12,5 @@ const realContacts = (state = initialState, action: PayloadAction<[]>) => {
       return state;
   }
 };
-
 
 export default realContacts;

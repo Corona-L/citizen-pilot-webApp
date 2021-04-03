@@ -1,6 +1,6 @@
 import React from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import { MAP_KEY } from '../../../config';
+import { MAP_KEY } from '../../../../config';
 
 const MAP_API_KEY = process.env.REACT_APP_MAP_API_KEY;
 
@@ -12,8 +12,8 @@ type mapProps = {
 const MapContainer: React.FC<mapProps> = ({ latitude, longitude }) => {
   console.log(MAP_API_KEY);
   const mapStyles = {
-    height: '50vh',
-    width: '100%',
+    height: '30vh',
+    width: '30vw',
   };
 
   const defaultCenter = {

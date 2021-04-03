@@ -1,10 +1,9 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { USER_LOGIN, SET_LOADING } from '../actions/ActionTypes';
 
-
 const initialState = {
   userData: null,
-  isLoggedIn: false
+  isLoggedIn: false,
 };
 
 const user = (state = initialState, action: PayloadAction<string>) => {

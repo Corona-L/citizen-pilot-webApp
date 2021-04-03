@@ -6,7 +6,6 @@ import realContacts from './reducers/realContacts';
 import realProposals from './reducers/realProposals';
 import realReports from './reducers/realReports';
 
-
 export const reducers = combineReducers({
   user,
   realProjects,
