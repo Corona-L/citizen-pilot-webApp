@@ -106,6 +106,7 @@
 
 .first-last-name {
   margin-bottom: 7px;
+  font-size: 16px;
 }
 
 .category-headertext {
@@ -127,4 +128,13 @@
 
 .catergory-text-white {
   margin-left: 20px;
+}
+
+.description {
+  padding-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+  margin-left: 10px;
+
 }

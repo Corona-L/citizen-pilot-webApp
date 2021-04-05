@@ -92,6 +92,9 @@ const Report: React.FC<props> = ({ report }) => {
             <ClearIcon />
           </IconButton>
         </div>
+        <div className="description">
+          {report.description}
+        </div>
         <div className="map-container">
           <MapContainer
             latitude={report.latitude}
@@ -101,9 +104,10 @@ const Report: React.FC<props> = ({ report }) => {
         <div className="picture-and-text">
           <div className="text-modal">
             <div className="first-last-name">
-              {report.user.fname} {report.user.lname}
+              Submitted by:
+               {report.user.fname} {report.user.lname}
             </div>
-            <div onClick={setCopied}>{report.user.email}</div>
+            <div className="first-last-name" onClick={setCopied}>{report.user.email}</div>
           </div>
           <div>
             <img

@@ -5,7 +5,7 @@ import Proposal from './Proposal/proposal';
 
 const MOCK_DATA_PROPOSALS = [
   {
-    title: 'Build more benches along the broadwater',
+    title: 'Build more benches',
     description:
       'Currently a proposal has been made to build more benches along the broadwater in Mermaid Beach. This would include one for every 25m along the beach.',
     location: 'Mermaid Beach',
